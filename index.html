@@ -97,23 +97,23 @@
         }
 
         .about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem; /* Adds spacing between the text and the image */
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem; /* Adds spacing between the text and the image */
+        }
 
-.about-container p {
-    flex: 1;
-    margin: 0;
-}
+        .about-container p {
+            flex: 1;
+            margin: 0;
+        }
 
-.about-photo {
-    width: 150px; /* Adjust the width as needed */
-    height: auto;
-    border-radius: 8px; /* Makes the image corners rounded */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        .about-photo {
+            width: 150px; /* Adjust the width as needed */
+            height: auto;
+            border-radius: 8px; /* Makes the image corners rounded */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
     </style>
 </head>
@@ -135,11 +135,11 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="about-container">
-            <p id="about-text"></p>
+            <!-- Added hyperlink to Braingaze -->
+            <p>Hey there!<br>I'm Chamith Dilshan from Sri Lanka.<br>Currently, I work remotely as the Lead AI Engineer at <a href="https://www.braingaze.com" target="_blank">Braingaze</a>, Spain.</p>
             <img src="chamith.jpg" alt="Chamith Dilshan" class="about-photo">
         </div>
     </section>
-
 
     <!-- Projects Section -->
     <section id="projects">
@@ -166,20 +166,5 @@
         <p>&copy; 2024 Your Name | Built with 💻 and ☕</p>
     </footer>
 
-<script>
-    // Load About Me text dynamically
-    fetch('about.txt')
-    .then(response => response.text())
-    .then(data => {
-        // Replace newlines (\n) with <br> for proper HTML rendering
-        document.getElementById('about-text').innerHTML = data.replace(/\n/g, '<br>');
-    })
-    .catch(error => {
-        console.error('Error loading the About Me text:', error);
-    });
-
-</script>
-
 </body>
-
 </html>

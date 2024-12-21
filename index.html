@@ -145,9 +145,10 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="card">
-            <h3>Project Title 1</h3>
+            <h3><a href="project1.html">Project Title 1</a></h3>
             <p>A brief description of your project goes here. Highlight your role and achievements.</p>
         </div>
+        
         <div class="card">
             <h3>Project Title 2</h3>
             <p>A brief description of another project. Include any key outcomes or tools used.</p>
@@ -168,13 +169,15 @@
 <script>
     // Load About Me text dynamically
     fetch('about.txt')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('about-text').textContent = data;
-        })
-        .catch(error => {
-            console.error('Error loading the About Me text:', error);
-        });
+    .then(response => response.text())
+    .then(data => {
+        // Replace newlines (\n) with <br> for proper HTML rendering
+        document.getElementById('about-text').innerHTML = data.replace(/\n/g, '<br>');
+    })
+    .catch(error => {
+        console.error('Error loading the About Me text:', error);
+    });
+
 </script>
 
 </body>

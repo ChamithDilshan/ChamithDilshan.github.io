@@ -1,1 +1,3 @@
-Hello! I'm Chamith Dilshan, a passionate researcher in computer science. My interests include artificial intelligence, machine learning, and data analysis. I'm excited about contributing to groundbreaking research and pursuing my PhD journey.
+Hey there!
+I'm Chamith Dilshan from Sri Lanka.
+Currently, I work remotely as the Lead AI Engineer at <a href="https://braingaze.com/" target="_blank">Braingaze, Spain.</a>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 | Chamith Dilshan Portfolio</title>
+    <style>
+        /* General Styling (same as home page) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Header */
+        header {
+            background: #444;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            background: #eee;
+            padding: 1rem 0;
+        }
+        nav a {
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section h2 {
+            font-size: 2rem;
+            color: #444;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+        section p {
+            margin: 1rem 0;
+        }
+
+        /* Cards */
+        .card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #444;
+            color: #fff;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Header Section -->
+ <header>
+    <h1>Overhead people counter</h1>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</nav>
+<section>
+    <h2>Project Overview</h2>
+    <p>
+        During my internship, I had the opportunity to work on a series of projects, and the third project focused on developing a people counter using an overhead camera. This project was conducted under the supervision of Assoc Prof Yuen Chau, and the objective was to create an accurate, cost-effective solution for counting people entering and exiting various areas. In this article, I will share the key aspects and achievements of this challenging project, which has now been documented in a paper published at the IEEE TENCON 2024 conference held at Marina Bay Sands, Singapore, on December 3, 2024. The full paper can be accessed <a href="https://arxiv.org/abs/2411.10072" target="_blank">here</a>.
+    </p>
+
+    <h3>Project Background and Objectives</h3>
+    <p>
+        Our project addresses the critical need for accurate people counting in settings like smart buildings and public transport systems. This data is essential for applications such as optimizing energy usage, enhancing security, and gaining insights into customer behavior in environments like shopping malls.
+    </p>
+    <p>
+        We explored several methods previously used for people counting, including sensor-based approaches, WiFi signal analysis, and image processing techniques. However, each method has limitations, whether it be sensitivity to lighting conditions or the hardware demands of deep learning applications.
+    </p>
+    <p>
+        Identifying a gap in current methods, we propose a novel approach that performs effectively under all lighting conditions while maintaining high performance on edge computing devices. Our solution leverages an overhead IR camera to detect and track people by extracting features. Using transfer learning, efficient feature extraction, and a custom object tracking algorithm, we enhance the accuracy and reliability of our people counting system.
+    </p>
+    <p>
+        This project provides a valuable contribution to the field, offering a versatile solution that can be applied in a variety of contexts, including smart buildings and public transport systems.
+    </p>
+
+    <h3>Previous Work</h3>
+    <p>
+        People counting through doorways has been a topic of research for years, with methods such as sensor-based techniques, WiFi signal analysis, and image processing being explored. However, each of these methods has its drawbacks.
+    </p>
+    <ul>
+        <li><strong>Laser Range Finders and ultra-wideband radar sensors:</strong> These methods struggled with sensor placement and sensitivity to people’s speed.</li>
+        <li><strong>WiFi-based solutions:</strong> These faced challenges with phase distortion and compatibility issues with different building architectures.</li>
+        <li><strong>Image Processing:</strong> Techniques like background subtraction and depth cameras struggled with sensitivity to lighting changes and false positives from other objects.</li>
+        <li><strong>Deep Learning:</strong> While promising, convolutional neural networks (CNNs) and spatio-temporal tracking often faced high computational costs and slow performance.</li>
+    </ul>
+    <p>
+        This research aims to address these limitations by introducing a model that offers reliable people detection and tracking using machine vision techniques, optimized for edge computing devices. The system is designed to work effectively under various lighting conditions and provide real-time tracking with higher FPS.
+    </p>
+
+    <h3>Methodology</h3>
+    <p>
+        Due to confidentiality agreements, specific code details cannot be shared, but here's a general overview of our approach:
+    </p>
+    <ul>
+        <li><strong>People Detection and Tracking:</strong> We used transfer learning with the Single Shot MultiBox Detector (SSD) to detect people’s heads and distractions such as bags, trolleys, and chairs. A custom tracking algorithm was developed to monitor individuals in the video feed captured by the overhead camera.</li>
+        <li><strong>FPS Optimization:</strong> A key focus was optimizing the system for higher Frames Per Second (FPS). Our implementation achieved an average FPS of approximately 25 on an Intel® NUC 12 Pro Mini PC (NUC12WSHi7 model), a significant improvement over previous attempts that achieved less than 15 FPS.</li>
+        <li><strong>Accuracy Enhancement:</strong> We fine-tuned the algorithm to handle complex scenarios like people carrying bags, using trolleys, or walking in close proximity. This led to an overall accuracy rate of around 96%, ensuring reliable people counting.</li>
+    </ul>
+
+    <h3>Results and Achievements</h3>
+
+    <div class="card">
+        <p>Watch the results of the project in this video:</p>
+        <iframe src="https://drive.google.com/file/d/1M65am2l-mcx51gXEJT3_lvNf4HyWL-CR/preview" width="640" height="360" allow="autoplay"></iframe>
+    </div>
+    <p>
+        This project achieved notable advancements in both performance and accuracy:
+    </p>
+    <ul>
+        <li>The system reached an average FPS of 25, an improvement that allowed accurate tracking of fast-moving individuals in real-time.</li>
+        <li>The accuracy rate of approximately 96% ensured precise people counting, even in challenging conditions.</li>
+    </ul>
+    <p>
+        These results highlight the potential for our solution to be applied in a wide range of settings, ensuring efficient and reliable people counting.
+    </p>
+
+    <h3>Paper Publication</h3>
+    <p>
+        The findings from this project were recently published in a paper titled <strong>"Real-Time AI-Driven People Tracking and Counting Using Overhead Cameras"</strong> at the IEEE TENCON 2024 conference, held at Marina Bay Sands, Singapore, on December 3, 2024. You can read the full paper on <a href="https://arxiv.org/abs/2411.10072" target="_blank">arXiv</a>.
+    </p>
+
+    <h3>References</h3>
+    <ul>
+        <li>[1] Jae Hoon Lee et al. “Security Door System Using Human Tracking Method with Laser Range Finders”. In: International Conference on Mechatronics and Automation (Aug. 2007). doi: <a href="https://doi.org/10.1109/icma.2007.4303868" target="_blank">https://doi.org/10.1109/icma.2007.4303868</a>.</li>
+        <li>[2] Jeong Woo Choi, Xuanjun Quan, and Sung Ho Cho. “Bi-Directional Passing People Counting System Based on IR-UWB Radar Sensors”. In: IEEE Internet of Things Journal 5.2 (Apr. 2018), pp. 512–522. doi: <a href="https://doi.org/10.1109/jiot.2017.2714181" target="_blank">https://doi.org/10.1109/jiot.2017.2714181</a>.</li>
+        <li>[3] Liping Tian et al. “A People-Counting and Speed-Estimation System Using Wi-Fi Signals”. In: Sensors 21.10 (May 2021), p. 3472. doi: <a href="https://doi.org/10.3390/s21103472" target="_blank">https://doi.org/10.3390/s21103472</a>.</li>
+        <li>[4] Yanni Yang et al. “Door-Monitor: Counting In-and-out Visitors with COTS WiFi Devices”. In: IEEE Internet of Things Journal (2019), pp. 1–1. doi: <a href="https://doi.org/10.1109/jiot.2019.2953713" target="_blank">https://doi.org/10.1109/jiot.2019.2953713</a>.</li>
+        <li>[5] Shijie Sun et al. “Benchmark Data and Method for Real-Time People Counting in Cluttered Scenes Using Depth Sensors”. In: IEEE Transactions on Intelligent Transportation Systems 20.10 (Oct. 2019), pp. 3599–3612. doi: <a href="https://doi.org/10.1109/tits.2019.2911128" target="_blank">https://doi.org/10.1109/tits.2019.2911128</a>.</li>
+        <li>[6] Wei Liu et al. “SSD: Single Shot MultiBox Detector”. In: CoRR abs/1512.02325 (2015). arXiv: <a href="http://arxiv.org/abs/1512.02325" target="_blank">http://arxiv.org/abs/1512.02325</a>.</li>
+    </ul>
+</section>
+
+</body>
+</html>

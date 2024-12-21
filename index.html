@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+    <title>Chamith Dilshan | Portfolio</title>
     <style>
         /* General Styling */
         body {
@@ -95,13 +95,33 @@
             margin: 0;
             font-size: 0.9rem;
         }
+
+        .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem; /* Adds spacing between the text and the image */
+}
+
+.about-container p {
+    flex: 1;
+    margin: 0;
+}
+
+.about-photo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 8px; /* Makes the image corners rounded */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <h1>Your Name</h1>
-        <p>Aspiring PhD Candidate | Research Enthusiast</p>
+        <h1>Chamith Dilshan</h1>
+        <p>Welcome to my portfolio!</p>
     </header>
 
     <!-- Navigation -->
@@ -114,8 +134,12 @@
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I'm [Your Name], a passionate researcher in [Your Field]. My interests include [Your Interests]. I'm excited about contributing to groundbreaking research and pursuing my PhD journey.</p>
+        <div class="about-container">
+            <p id="about-text"></p>
+            <img src="chamith.jpg" alt="Chamith Dilshan" class="about-photo">
+        </div>
     </section>
+
 
     <!-- Projects Section -->
     <section id="projects">
@@ -140,5 +164,19 @@
     <footer>
         <p>&copy; 2024 Your Name | Built with 💻 and ☕</p>
     </footer>
+
+<script>
+    // Load About Me text dynamically
+    fetch('about.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('about-text').textContent = data;
+        })
+        .catch(error => {
+            console.error('Error loading the About Me text:', error);
+        });
+</script>
+
 </body>
+
 </html>

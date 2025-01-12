@@ -10,34 +10,66 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            color: #333;
+            color: #f3f6ea;
+            background-color: #000;
         }
+        a {
+            text-decoration: none;
+            color: #949ebe;
+        }
+        a:hover {
+            color: #dc7854;
+        }
+
+        /* Header */
         header {
-            background: #444;
+            background: #0e1f3b;
             color: #fff;
             padding: 2rem 1rem;
             text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            background: #424241;
+            padding: 1rem 0;
+        }
+        nav a {
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        /* Sections */
         section {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
         section h2 {
             font-size: 2rem;
-            color: #444;
-            border-bottom: 2px solid #007bff;
+            color: #9f98c9;
+            border-bottom: 2px solid #c2b7f3;
             padding-bottom: 0.5rem;
         }
+        section p {
+            margin: 1rem 0;
+        }
+
+        /* Cards */
         .card {
-            background: #f9f9f9;
+            background: #1a1818;
             padding: 1.5rem;
             margin: 1.5rem 0;
-            border: 1px solid #ddd;
+            border: 1px solid #969191;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -48,9 +80,11 @@
         .card p {
             margin: 0;
         }
+
+        /* Footer */
         footer {
             text-align: center;
-            background: #444;
+            background: #061142;
             color: #fff;
             padding: 1rem 0;
             position: relative;
@@ -66,11 +100,11 @@
     </header>
 
     <nav>
-        <a href="index.html">Home</a>
+        <a href="#about">About</a>
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="#contact">Contact</a>
-        <a href="#cv">CV</a>
+        <a href="#resume">Resume</a>
     </nav>
     
 
@@ -93,7 +127,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Chamith Dilshan | Built with 💻 and ☕</p>
+        <p>&copy; 2024 Chamith Dilshan Ranathunga| Built with 💻 and ☕</p>
     </footer>
 </body>
 </html>

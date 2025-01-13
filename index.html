@@ -53,7 +53,7 @@
 
         /* Sections */
         section {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
@@ -67,21 +67,70 @@
             margin: 1rem 0;
         }
 
-        /* Cards */
+        /* Cards Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        /* Card Styling */
         .card {
-            background: #1a1818;
+            background: #1e1e1e;
+            color: #e0e0e0;
             padding: 1.5rem;
-            margin: 1.5rem 0;
-            border: 1px solid #969191;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .card h3 {
-            margin: 0 0 0.5rem;
-            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            color: #4ea1f3;
         }
+
         .card p {
-            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Hover Effect for Cards */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        /* View All Posts Link */
+        .view-all {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #4ea1f3;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .view-all:hover {
+            color: #1d9bf0;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cards-container {
+                padding: 0;
+            }
+            .card {
+                padding: 1rem;
+            }
         }
 
         /* Footer */
@@ -151,20 +200,24 @@
     <!-- Recent Posts Section -->
     <section id="projects">
         <h2>Recent Posts</h2>
-        <div class="card">
-            <h3><a href="projects/project1.html">Overhead People Counter</a></h3>
-            <p>Developed a real-time AI-driven people counting system using overhead cameras, achieving 96% accuracy and high FPS on edge devices.</p>
+        <div class="cards-container">
+            <div class="card">
+                <h3><a href="projects/project1.html">Overhead People Counter</a></h3>
+                <p>Developed a real-time AI-driven people counting system using overhead cameras, achieving 96% accuracy and high FPS on edge devices.</p>
+            </div>
+            <div class="card">
+                <h3><a href="projects/project2.html">Enhancing Safety and Security: An Internship Project in Action Recognition</a></h3>
+                <p>A project focused on recognizing human actions for enhancing safety in public and industrial settings.</p>
+            </div>
+            <div class="card">
+                <h3><a href="projects/project3.html">Enhancing Security: An Internship Project in Unauthorized Person Identification</a></h3>
+                <p>Developed a system to identify unauthorized persons in restricted areas using facial recognition and object detection.</p>
+            </div>
         </div>
-        <div class="card">
-            <h3><a href="projects/project2.html">Enhancing Safety and Security: An Internship Project in Action Recognition</a></h3>
-            <p>A brief description of another project. Include any key outcomes or tools used.</p>
-        </div>
-        <div class="card">
-            <h3><a href="projects/project3.html">Enhancing Security: An Internship Project in Unauthorized Person Identification</a></h3>
-            <p>Another brief description of a recent project. Make it engaging and informative.</p>
-        </div>
-        <p><a href="blog.html">View All Posts</a></p>
+        <p><a href="blog.html" class="view-all">View All Posts</a></p>
     </section>
+
+
 
     <!-- CV Section -->
     <section id="resume">

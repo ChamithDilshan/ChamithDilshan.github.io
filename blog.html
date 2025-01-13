@@ -21,6 +21,7 @@
             color: #dc7854;
         }
 
+        /* Header */
         header {
             background: #0e1f3b;
             color: #fff;
@@ -29,8 +30,14 @@
         }
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation */
         nav {
             text-align: center;
             background: #424241;
@@ -40,6 +47,8 @@
             margin: 0 1rem;
             font-weight: bold;
         }
+
+        /* Sections */
         section {
             max-width: 800px;
             margin: 2rem auto;
@@ -51,6 +60,11 @@
             border-bottom: 2px solid #c2b7f3;
             padding-bottom: 0.5rem;
         }
+        section p {
+            margin: 1rem 0;
+        }
+
+        /* Cards */
         .card {
             background: #1a1818;
             padding: 1.5rem;
@@ -66,6 +80,8 @@
         .card p {
             margin: 0;
         }
+
+        /* Footer */
         footer {
             text-align: center;
             background: #061142;
@@ -80,11 +96,11 @@
 <body>
     <header>
         <h1>Blog</h1>
-        <p>Insights and updates from Chamith Dilshan</p>
+        <p>Insights and updates from Chamith</p>
     </header>
 
     <nav>
-        <a href="#about">About</a>
+        <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="#contact">Contact</a>
@@ -94,15 +110,15 @@
     <section>
         <h2>All Posts</h2>
         <div class="card">
-            <h3><a href="blog-post1.html">Post Title 1</a></h3>
+            <h3><a href="blogs/blog1.html">Post Title 1</a></h3>
             <p>A short description of the blog post or topic covered.</p>
         </div>
         <div class="card">
-            <h3><a href="blog-post2.html">Post Title 2</a></h3>
+            <h3><a href="blogs/blog2.html">Post Title 2</a></h3>
             <p>A short description of another interesting topic.</p>
         </div>
         <div class="card">
-            <h3><a href="blog-post3.html">Post Title 3</a></h3>
+            <h3><a href="blogs/blog3.html">Post Title 3</a></h3>
             <p>A brief snippet about this post to entice readers.</p>
         </div>
         <!-- Add more blog cards as needed -->

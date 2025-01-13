@@ -84,20 +84,34 @@
             cursor: pointer;
         }
 
+        .minimize-icon {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            background: var(--text-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 18px;
+            line-height: 24px;
+            cursor: pointer;
+        }
+
         .chat-body {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    background: transparent;
-    color: var(--text-color);
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-}
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: transparent;
+            color: var(--text-color);
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none; /* For Internet Explorer and Edge */
+        }
 
-.chat-body::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
-}
-
+        .chat-body::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
 
         .chat-input {
             display: flex;
@@ -176,6 +190,7 @@
         <div class="chat-header">
             Chat with Chamith AI Assistant!
             <div class="new-session-icon" onclick="initializeNewSession()">&#x21bb;</div>
+            <div class="minimize-icon" onclick="toggleMinimize()">&#x2212;</div>
         </div>
         <div class="chat-body" id="chatBody"></div>
         <div class="chat-input">
@@ -200,7 +215,19 @@
 
         function toggleChatWidget() {
             const chatWidget = document.getElementById('chatWidget');
-            chatWidget.classList.toggle('expanded');
+            const chatIcon = document.getElementById('chatIcon');
+
+            if (chatWidget.style.display === 'none') {
+                chatWidget.style.display = 'flex';
+                chatIcon.style.display = 'none';
+            } else {
+                chatWidget.style.display = 'none';
+                chatIcon.style.display = 'flex';
+            }
+        }
+
+        function toggleMinimize() {
+            toggleChatWidget();
         }
 
         function handleKeyPress(event) {

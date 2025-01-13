@@ -115,6 +115,21 @@
             border-radius: 8px; /* Makes the image corners rounded */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .chat-widget {
+    position: fixed;
+    bottom: 2%; /* 2% from the bottom */
+    right: 2%;  /* 2% from the right */
+    width: 25vw; /* 25% of the viewport width */
+    height: 50vh; /* 50% of the viewport height */
+    background: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
     </style>
 </head>
@@ -181,6 +196,12 @@
     <footer>
         <p>&copy; 2024 Chamith Dilshan Ranathunga| Built with 💻 and ☕</p>
     </footer>
+    <!-- Add this before the closing </body> tag in your index.html -->
+<iframe 
+src="chat-widget.html" 
+style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; border: none; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); border-radius: 10px;" 
+title="Chat Widget">
+</iframe>
 
 </body>
 </html>

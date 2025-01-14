@@ -70,7 +70,7 @@
         /* Cards Container */
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
             gap: 1.5rem;
             padding: 1rem;
         }
@@ -83,6 +83,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%; /* Ensure card height is consistent */
         }
 
         .card h3 {
@@ -116,21 +117,23 @@
             color: #dc7854;
         }
 
-        /* Responsive Design */
+        /* Responsive Design for smaller devices */
+        @media (max-width: 1024px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 cards per row for medium screens */
+            }
+        }
+
         @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr; /* 1 card per row for small screens */
+            }
+
             .card {
                 padding: 1rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .cards-container {
-                padding: 0;
-            }
-            .card {
-                padding: 1rem;
-            }
-        }
 
         /* Footer */
         footer {
@@ -212,24 +215,25 @@
     </section>
 
     <!-- Recent Posts Section -->
-    <section id="projects">
+    <section id="blogs">
         <h2>Recent Posts</h2>
         <div class="cards-container">
             <div class="card">
-                <h3><a href="blogs/blog1.html">Blog1</a></h3>
-                <p>bloggggggggggggggggg</p>
+                <h3><a href="blogs/blog2.html">Discover Auditory Brainstem Response (ABR) with Me 🧠😀</a></h3>
+                <p>Explore how auditory brainstem responses are recorded and analyzed, offering insights into brain function and hearing health.</p>
             </div>
             <div class="card">
-                <h3><a href="blogs/blog2.html">Blog2</a></h3>
-                <p>bloggggggggggg</p>
+                <h3><a href="blogs/blog1.html">Blog1</a></h3>
+                <p>bloggggggggggggggggg</p>
             </div>
             <div class="card">
                 <h3><a href="blogs/blog3.html">Blog3</a></h3>
                 <p>bloggggg</p>
             </div>
         </div>
-        <p><a href="blog.html" class="view-all">View All Posts</a></p> 
+        <p><a href="blog.html" class="view-all">View All Posts</a></p>
     </section>
+    
 
 
 

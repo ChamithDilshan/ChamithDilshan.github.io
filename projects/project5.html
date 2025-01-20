@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarSense | Chamith Dilshan Portfolio</title>
+    <style>
+        /* General Styling (same as home page) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #f3f6ea;
+            background-color: #0d1117;
+        }
+        a {
+            text-decoration: none;
+            color: #949ebe;
+        }
+        a:hover {
+            color: #dc7854;
+        }
+
+        /* Header */
+        header {
+            background: #0e1f3b;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            background: #424241;
+            padding: 1rem 0;
+        }
+        nav a {
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section h2 {
+            font-size: 2rem;
+            color: #a898ff;
+            border-bottom: 2px solid #c2b7f3;
+            padding-bottom: 0.5rem;
+        }
+        section h3 {
+            color: #aef468; 
+        }
+        section p {
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #061142;
+            color: #fff;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Header Section -->
+ <header>
+    <h1>EarSense: Dry Electrode Earpiece for EarEEG</h1>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../blog.html">Blogs</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="../index.html#resume">Resume</a>
+</nav>
+
+<section>
+    
+
+    <h2>Project Overview</h2>
+    <p>EarSense is my final year project in the Bachelor’s degree in Biomedical Engineering, aimed at designing an innovative generic dry electrode earpiece for collecting ear-EEG data. The objective was to address challenges associated with traditional scalp EEG acquisition by focusing on electrode selection and positioning, signal transmission, interference mitigation, signal processing, and integration into a simple brain-computer interface (BCI) application.</p>
+
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <!-- Video -->
+        <iframe src="https://drive.google.com/file/d/1_daN5WktzVCmZg2A9-OovasmggENeQqW/preview" 
+                width="640" height="360" allow="autoplay" style="margin-right: 20px;"></iframe>
+        
+        <!-- Image -->
+        <img src="project_5_images/full_product.jpg" 
+             alt="Full Product Image" width="300" height="auto" style="flex-shrink: 0;">
+    </div>
+    <h3>Project Background and Objectives</h3>
+
+    
+
+    <p>Traditional scalp EEG systems, though effective, are often bulky and can be uncomfortable for users. The goal of this project was to create a more compact and user-friendly solution without compromising signal quality. By designing an earpiece capable of collecting EEG data from within the ear canal, we aimed to provide a viable alternative to conventional systems. Key objectives included:</p>
+    <ul>
+        <li>Ensuring high-quality signal acquisition.</li>
+        <li>Minimizing electromagnetic interference.</li>
+        <li>Validating performance through comparative analysis with traditional scalp EEG systems.</li>
+        <li>Demonstrating the feasibility of using the earpiece in a basic BCI application.</li>
+    </ul>
+
+    <h3>Methodology</h3>
+<div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <div style="flex: 1;">
+        <p>To achieve our goals, we strategically placed Ag/AgCl palette electrodes within the ear canal to optimize skin contact and signal quality. Active shielding techniques were used to minimize resistance and improve signal acquisition. The earpieces were fabricated using Luxaprint, a material commonly used in hearing aids, to address initial manufacturing challenges. The design was rigorously tested through:</p>
+        <ul>
+            <li><strong>Alpha attenuation testing:</strong> Evaluating the earpiece’s ability to detect changes in brain activity. This was primarily a visual test.</li>
+            <li><strong>Auditory mismatch negativity analysis:</strong> Comparing results from our device with those from traditional scalp EEG systems. This involved a quantitative approach.</li>
+        </ul>
+    </div>
+
+    <!-- Image Section -->
+    <div style="flex-shrink: 0; margin-left: 20px;">
+        <img src="project_5_images/Drilled Tunnels for coaxial cables.png" alt="Image 1" width="300" height="auto" style="display: block; margin-bottom: 10px;">
+        <img src="project_5_images/electrodes.png" alt="Image 2" width="300" height="auto">
+    </div>
+</div>
+
+<h3>Validation of Wide-Fit Ear-EEG Amplifier using Auditory Mismatch Negativity</h3>
+<p>This section details the validation process of our wide-fit ear-EEG amplifier using the auditory mismatch negativity (MMN) paradigm.</p>
+
+<h4>Experimental Design:</h4>
+<ul>
+    <li><strong>Stimuli:</strong> We employed auditory stimuli designed to elicit an MMN response. This typically involves presenting a sequence of standard tones (1000Hz) interspersed with infrequent deviant tones (2000Hz).</li>
+</ul>
+
+<h4>Data Acquisition:</h4>
+<ul>
+    <li><strong>Scalp EEG:</strong> Electroencephalographic (EEG) data was simultaneously recorded from the scalp using a conventional bio-amplifier (Octal Bioamp) to serve as a gold standard.</li>
+    <li><strong>Ear-EEG:</strong> EEG data was concurrently collected from our wide-fit earpiece amplifier.</li>
+</ul>
+
+<h4>Data Processing:</h4>
+<ul>
+    <li><strong>Ensemble Averaging:</strong> For both scalp and ear-EEG data, we applied ensemble averaging to enhance the MMN response by eliminating background noise. This involves averaging the EEG responses time-locked to the presentation of the stimuli.</li>
+    <li><strong>P1-N1-P2 Segment Extraction:</strong> The P1-N1-P2 complex, a characteristic waveform associated with the MMN response, was extracted from the averaged waveforms. (P1, N1, and P2 represent specific peaks in the waveform).</li>
+</ul>
+
+<h4>Statistical Analysis:</h4>
+<ul>
+    <li><strong>Hypothesis Testing:</strong> We conducted a t-test to evaluate the hypothesis (H₀) that there is "no linear relationship" between the P1-N1-P2 segment amplitudes obtained from the earpiece and the scalp recording. The alternative hypothesis (H₁) states that there is a "linear relationship" between the two results.</li>
+    <li><strong>Results:</strong> The p-value obtained from the t-test was approximately 0, indicating a statistically significant rejection of the null hypothesis (H₀). This suggests a strong linear relationship between the earpiece and scalp recordings.</li>
+    <li><strong>Correlation Analysis:</strong> The high correlation coefficients of 0.89, 0.85, and 0.71 from different people further support the presence of a robust linear association between the P1-N1-P2 amplitudes from both recording methods.</li>
+</ul>
+
+<p>These findings demonstrate a strong positive correlation between the MMN responses measured from our wide-fit ear-EEG amplifier and the conventional scalp EEG recordings. This suggests that our earpiece effectively captures brain activity related to the MMN paradigm, providing a promising alternative for EEG data acquisition, particularly when scalp EEG placement might be impractical.</p>
+
+<figure style="text-align: center; margin-top: 20px;">
+    <img src="project_5_images/signal_processing_steps.png" alt="Results Image" width="600" height="auto">
+    <figcaption>Statistical validation steps</figcaption>
+</figure>
+
+<h3>Brain-Computer Interface</h3>
+<p>We created a simplified Donchin speller matrix, where the subject focused on either 'Y' or 'N', representing 'yes' and 'no' responses. The letters blinked randomly, and event markers were captured. Trials lasted three minutes in a quiet environment, with EEG signals recorded during 'Y' and 'N' presentations.</p>
+
+<p>Our goal was to predict where the person was looking. The target typically showed a dominant P300 signal. To enhance explainability, we used Grad-CAM, which highlights key areas of the input data influencing the model’s predictions, making the decision-making process more understandable and trustworthy. Grad-CAM also confirmed our results by highlighting regions around 300ms.</p>
+
+<p>Using transfer learning, we applied scalograms of the mean signals for 'Y' and 'N'. We achieved 0.8 accuracy with AlexNet and 0.83 with ResNet50. After recording, the application displays the focused letter and its corresponding scalogram.</p>
+
+<iframe src="https://drive.google.com/file/d/1K5yjufcb5IfVG76LHGFaVSLfgoOX4BD0/preview?t=13" 
+        width="640" height="360" allow="autoplay" style="margin-right: 20px;"></iframe>
+
+
+<h3>Results and Achievements</h3>
+<p>The earpiece demonstrated significant advancements in EEG data collection, including:</p>
+<ul>
+    <li><strong>Device Validation:</strong> Comparison with an octal bio-amp scalp EEG system showed strong correlation during auditory mismatch negativity tasks.</li>
+    <li><strong>Improved Signal Quality:</strong> Resistance was reduced to approximately 250 mΩ, a substantial improvement over the 3 kΩ resistance in previous attempts by a research team from the University of Moratuwa.</li>
+    <li><strong>BCI Implementation:</strong> Developed a basic version of Donchin’s speller matrix using P300 signals, enabling binary-stage button control via transfer learning.</li>
+    <li><strong>Enhanced Analysis:</strong> Scalograms of the P300 signals were paired with GradCam for improved interpretability of classification tasks.</li>
+    <li><strong>Innovative Design:</strong> Separation of reference and active electrodes between ears enhanced signal pickup, particularly in auditory and visual cortex regions.</li>
+</ul>
+
+
+
+<h3>Device specifications</h3>
+<ul>
+    <li><strong>Wide-Fit Design:</strong> 3 ear piece sizes for broader usability.</li>
+    <li><strong>Reduced Impedance:</strong> From electrode to the PCB, the impedance is around 250 mΩ, which is a significant improvement.</li>
+    <li><strong>EEG Signal Acquisition:</strong> Captures brainwave activity through strategically placed electrodes within the earpiece.</li>
+    <li><strong>Battery Powered:</strong> Operates on two readily available 3.7V Lithium Ion batteries for portability and ease of use.</li>
+    <li><strong>WiFi Connection:</strong> Use WiFi to connect to a computer for real-time data transmission of collected EEG signals.</li>
+    <li><strong>Serial Port Connection:</strong> Use to update the firmware.</li>
+    <li><strong>Class II Medical Device (IEC 60601-1):</strong> Adheres to safety standards for moderate-risk medical devices.</li>
+    <li><strong>Type BF Applied Part:</strong> Electrodes meet strict leakage current standards for safe contact with the user's skin.</li>
+</ul>
+
+
+    
+
+    <h3>Recognition</h3>
+    <p>Our project was awarded <strong>Best Undergraduate Thesis Project in the Signal Processing Domain</strong> in the "Undergraduate Thesis Project Competition - 2024," organized by the IEEE Signal Processing Society. The competition was held on November 30, 2024 at SLTC Research University. This recognition highlights the innovation and effort behind our work.</p>
+
+    <figure style="text-align: center; margin-top: 20px;">
+        <img src="project_5_images/award.jpg" alt="Results Image" width="300" height="auto">
+    </figure>
+
+    <h3>Conclusion</h3>
+    <p>This project has established a strong foundation for future advancements in earEEG-based BCIs. Our innovative earpiece design not only improves signal quality and user comfort but also highlights the potential for developing compact and efficient brain-computer interaction systems.</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Chamith Dilshan Portfolio. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

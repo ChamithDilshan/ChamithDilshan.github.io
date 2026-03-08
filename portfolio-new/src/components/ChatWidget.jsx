@@ -30,7 +30,7 @@ export default function ChatWidget() {
         setIsLoading(true);
 
         try {
-            const response = await fetch('https://chamith.pythonanywhere.com/ask', {
+            const response = await fetch('https://chamithdilshan.pythonanywhere.com/ask', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ question: text, sessionID: sessionId }),

@@ -1,0 +1,176 @@
+import { FiCpu, FiCamera, FiShield, FiTool, FiActivity } from 'react-icons/fi';
+
+const projects = [
+    {
+        id: 'earsense',
+        title: 'EarSense 🦻🏼',
+        shortDescription: 'Ear-EEG hardware and interpretable deep learning in P300s based event classification',
+        tag: 'Final Year Project',
+        icon: <FiActivity />,
+        content: {
+            overview: `EarSense is my final year project in the Bachelor's degree in Biomedical Engineering, aimed at designing an innovative generic dry electrode earpiece for collecting ear-EEG data. The objective was to address challenges associated with traditional scalp EEG acquisition by focusing on electrode selection and positioning, signal transmission, interference mitigation, signal processing, and integration into a simple brain-computer interface (BCI) application.`,
+            background: `Traditional scalp EEG systems, though effective, are often bulky and can be uncomfortable for users. The goal of this project was to create a more compact and user-friendly solution without compromising signal quality. By designing an earpiece capable of collecting EEG data from within the ear canal, we aimed to provide a viable alternative to conventional systems.`,
+            objectives: [
+                'Ensuring high-quality signal acquisition.',
+                'Minimizing electromagnetic interference.',
+                'Validating performance through comparative analysis with traditional scalp EEG systems.',
+                'Demonstrating the feasibility of using the earpiece in a basic BCI application.',
+            ],
+            methodology: `To achieve our goals, we strategically placed Ag/AgCl palette electrodes within the ear canal to optimize skin contact and signal quality. Active shielding techniques were used to minimize resistance and improve signal acquisition. The earpieces were fabricated using Luxaprint, a material commonly used in hearing aids, to address initial manufacturing challenges.`,
+            methodologyItems: [
+                'Alpha attenuation testing: Evaluating the earpiece\'s ability to detect changes in brain activity. This was primarily a visual test.',
+                'Auditory mismatch negativity analysis: Comparing results from our device with those from traditional scalp EEG systems. This involved a quantitative approach.',
+            ],
+            validation: {
+                title: 'Validation of Wide-Fit Ear-EEG Amplifier using Auditory Mismatch Negativity',
+                intro: 'This section details the validation process of our wide-fit ear-EEG amplifier using the auditory mismatch negativity (MMN) paradigm.',
+                experimentalDesign: 'We employed auditory stimuli designed to elicit an MMN response. This typically involves presenting a sequence of standard tones (1000Hz) interspersed with infrequent deviant tones (2000Hz).',
+                dataAcquisition: [
+                    'Scalp EEG: Electroencephalographic (EEG) data was simultaneously recorded from the scalp using a conventional bio-amplifier (Octal Bioamp) to serve as a gold standard.',
+                    'Ear-EEG: EEG data was concurrently collected from our wide-fit earpiece amplifier.',
+                ],
+                dataProcessing: [
+                    'Ensemble Averaging: For both scalp and ear-EEG data, we applied ensemble averaging to enhance the MMN response by eliminating background noise.',
+                    'P1-N1-P2 Segment Extraction: The P1-N1-P2 complex, a characteristic waveform associated with the MMN response, was extracted from the averaged waveforms.',
+                ],
+                stats: [
+                    'Hypothesis Testing: We conducted a t-test. The p-value obtained was approximately 0, indicating a statistically significant rejection of the null hypothesis.',
+                    'Correlation Analysis: High correlation coefficients of 0.89, 0.85, and 0.71 from different people further support the presence of a robust linear association.',
+                ],
+                conclusion: 'These findings demonstrate a strong positive correlation between the MMN responses measured from our wide-fit ear-EEG amplifier and the conventional scalp EEG recordings.',
+            },
+            bci: {
+                title: 'Brain-Computer Interface',
+                description: `We created a simplified Donchin speller matrix, where the subject focused on either 'Y' or 'N', representing 'yes' and 'no' responses. The letters blinked randomly, and event markers were captured. Our goal was to predict where the person was looking. To enhance explainability, we used Grad-CAM, which highlights key areas of the input data influencing the model's predictions. Using transfer learning, we applied scalograms of the mean signals and achieved 0.8 accuracy with AlexNet and 0.83 with ResNet50.`,
+            },
+            results: [
+                'Device Validation: Comparison with an octal bio-amp scalp EEG system showed strong correlation during auditory mismatch negativity tasks.',
+                'Improved Signal Quality: Resistance was reduced to approximately 250 mΩ, a substantial improvement over the 3 kΩ resistance in previous attempts.',
+                'BCI Implementation: Developed a basic version of Donchin\'s speller matrix using P300 signals, enabling binary-stage button control via transfer learning.',
+                'Enhanced Analysis: Scalograms of the P300 signals were paired with GradCam for improved interpretability.',
+                'Innovative Design: Separation of reference and active electrodes between ears enhanced signal pickup.',
+            ],
+            specs: [
+                'Wide-Fit Design: 3 earpiece sizes for broader usability.',
+                'Reduced Impedance: From electrode to the PCB, the impedance is around 250 mΩ.',
+                'EEG Signal Acquisition: Captures brainwave activity through strategically placed electrodes.',
+                'Battery Powered: Operates on two 3.7V Lithium Ion batteries.',
+                'WiFi Connection: Real-time data transmission of collected EEG signals.',
+                'Serial Port Connection: Firmware updates.',
+                'Class II Medical Device (IEC 60601-1): Adheres to safety standards.',
+                'Type BF Applied Part: Electrodes meet strict leakage current standards.',
+            ],
+            recognition: `Our project was awarded Best Undergraduate Thesis Project in the Signal Processing Domain in the "Undergraduate Thesis Project Competition - 2024," organized by the IEEE Signal Processing Society. The competition was held on November 30, 2024 at SLTC Research University.`,
+            conclusionText: `This project has established a strong foundation for future advancements in earEEG-based BCIs. Our innovative earpiece design not only improves signal quality and user comfort but also highlights the potential for developing compact and efficient brain-computer interaction systems.`,
+            acknowledgements: `I'm incredibly proud of what our team, Lahiru Shyamal, Yohan Abeysinghe, and Lakshan Rathnayake, have accomplished. A huge thanks to our supervisors, Dr. Anjula De Silva and Dr. Chamira Edussooriya. Thanks to Dr. Anusha Withana for funding this project and Wickramarachchi Opticians and Hearing Care for providing us with facilities.`,
+            images: {
+                fullProduct: 'images/project_5/full_product.jpg',
+                drilledTunnels: 'images/project_5/drilled_tunnels.png',
+                electrodes: 'images/project_5/electrodes.png',
+                signalProcessing: 'images/project_5/signal_processing_steps.png',
+                award: 'images/project_5/award.jpg',
+            },
+            videos: [
+                'https://drive.google.com/file/d/1_daN5WktzVCmZg2A9-OovasmggENeQqW/preview',
+                'https://drive.google.com/file/d/1K5yjufcb5IfVG76LHGFaVSLfgoOX4BD0/preview?t=13',
+            ],
+        },
+    },
+    {
+        id: 'overhead-people-counter',
+        title: 'Overhead People Counter',
+        shortDescription: 'Real-time AI-driven people counting system using overhead cameras, achieving 96% accuracy and high FPS on edge devices.',
+        tag: 'IEEE TENCON 2024',
+        icon: <FiCamera />,
+        content: {
+            overview: `During my internship, I had the opportunity to work on a series of projects, and the third project focused on developing a people counter using an overhead camera. This project was conducted under the supervision of Assoc Prof Yuen Chau, and the objective was to create an accurate, cost-effective solution for counting people entering and exiting various areas. The paper was published at the IEEE TENCON 2024 conference held at Marina Bay Sands, Singapore.`,
+            background: `Our project addresses the critical need for accurate people counting in settings like smart buildings and public transport systems. This data is essential for applications such as optimizing energy usage, enhancing security, and gaining insights into customer behavior.`,
+            previousWork: `People counting through doorways has been a topic of research for years, with methods such as sensor-based techniques, WiFi signal analysis, and image processing being explored.`,
+            previousWorkItems: [
+                'Laser Range Finders and ultra-wideband radar sensors: Struggled with sensor placement and sensitivity to people\'s speed.',
+                'WiFi-based solutions: Faced challenges with phase distortion and compatibility issues.',
+                'Image Processing: Background subtraction and depth cameras struggled with lighting changes.',
+                'Deep Learning: CNNs and spatio-temporal tracking often faced high computational costs.',
+            ],
+            methodology: `Due to confidentiality agreements, specific code details cannot be shared, but here's a general overview:`,
+            methodologyItems: [
+                'People Detection and Tracking: We used transfer learning with the Single Shot MultiBox Detector (SSD) to detect people\'s heads and distractions. A custom tracking algorithm was developed.',
+                'FPS Optimization: Our implementation achieved an average FPS of approximately 25 on an Intel® NUC 12 Pro Mini PC.',
+                'Accuracy Enhancement: Fine-tuned to handle complex scenarios. Overall accuracy rate of around 96%.',
+            ],
+            results: [
+                'The system reached an average FPS of 25, allowing accurate tracking in real-time.',
+                'Accuracy rate of approximately 96% ensured precise people counting.',
+            ],
+            paper: {
+                title: 'Real-Time AI-Driven People Tracking and Counting Using Overhead Cameras',
+                conference: 'IEEE TENCON 2024, Marina Bay Sands, Singapore',
+                arxiv: 'https://arxiv.org/abs/2411.10072',
+            },
+            videos: ['https://drive.google.com/file/d/1M65am2l-mcx51gXEJT3_lvNf4HyWL-CR/preview'],
+            references: [
+                '[1] Jae Hoon Lee et al. "Security Door System Using Human Tracking Method with Laser Range Finders"',
+                '[2] Jeong Woo Choi et al. "Bi-Directional Passing People Counting System Based on IR-UWB Radar Sensors"',
+                '[3] Liping Tian et al. "A People-Counting and Speed-Estimation System Using Wi-Fi Signals"',
+                '[4] Yanni Yang et al. "Door-Monitor: Counting In-and-out Visitors with COTS WiFi Devices"',
+                '[5] Shijie Sun et al. "Benchmark Data and Method for Real-Time People Counting"',
+                '[6] Wei Liu et al. "SSD: Single Shot MultiBox Detector"',
+            ],
+        },
+    },
+    {
+        id: 'action-recognition',
+        title: 'Action Recognition for Safety',
+        shortDescription: 'Deep learning-based action recognition system to detect unauthorized activities in residential areas, deployed on edge devices.',
+        tag: 'Internship @ SUTD',
+        icon: <FiCpu />,
+        content: {
+            overview: `During my internship at Singapore University of Technology and Design, I worked on a project centered around action recognition under Assoc Prof Yuen Chau. This project aimed to detect and prevent unauthorized activities such as football playing and cycling in HDB void decks.`,
+            background: `HDBs and Condos are popular housing schemes in Singapore. The void deck, located on the ground floor, serves as a common area but unauthorized activities posed challenges to maintaining cleanliness and safety.`,
+            methodology: `We followed a rigorous methodology:`,
+            methodologyItems: [
+                'Problem Analysis: Understanding HDB rules regarding unauthorized activities.',
+                'Dataset Collection: Comprehensive dataset of annotated videos.',
+                'Model Selection: Explored CNNs, RNNs, and CNN-LSTM architectures.',
+                'Training and Evaluation: Fine-tuned parameters, evaluated on accuracy, precision, recall, and F1-score.',
+                'Optimization for Edge Devices: Model compression, quantization, and pruning.',
+                'System Integration and Testing: Real-time action recognition system.',
+            ],
+            results: ['Successfully developed a robust action recognition system for detecting unauthorized actions within HDB void decks.'],
+            conclusionText: `This project honed our skills in face detection and recognition, algorithm development, and real-time data management.`,
+            videos: ['https://drive.google.com/file/d/1M65am2l-mcx51gXEJT3_lvNf4HyWL-CR/preview'],
+        },
+    },
+    {
+        id: 'unauthorized-person-id',
+        title: 'Unauthorized Person Identification',
+        shortDescription: 'Face recognition system identifying unauthorized individuals in HDB power rooms using face embeddings in 128D space.',
+        tag: 'Internship @ SUTD',
+        icon: <FiShield />,
+        content: {
+            overview: `During my second internship project, I worked on identifying unauthorized individuals entering the power rooms of HDBs in Singapore under Assoc Prof Yuen Chau. This required detecting unauthorized people amidst normal activities.`,
+            background: `Ensuring security within HDB power rooms is crucial. The database of authorized personnel should update at anytime with only one photo.`,
+            methodology: `We divided the project into:`,
+            methodologyItems: [
+                'Face Detection and Filtering.',
+                'Face Recognition and Unauthorized Person Identification using 128D face embeddings.',
+                'Real-time Upload and Storage.',
+            ],
+            results: ['Achieved reliable real-time identification results by combining face detection, recognition models, and our proprietary algorithm.'],
+            conclusionText: `This project showcased the importance of advanced face recognition techniques and efficient real-time processing.`,
+        },
+    },
+    {
+        id: 'agrimac',
+        title: 'AgriMAC',
+        shortDescription: 'Smart engineering solution for food security in Sri Lanka — Top 5 in Spark Challenge 2021-22.',
+        tag: 'Competition',
+        icon: <FiTool />,
+        content: {
+            overview: `This project was done by our team, Team Fusion. As a member of Team Fusion, I am proud to share that we secured a place in the top 5 of the Spark Challenge 2021-22 organized by the Department of Electronic and Telecommunication Engineering at the University of Moratuwa.`,
+            results: ['Secured Top 5 placement in Spark Challenge 2021-22.'],
+        },
+    },
+];
+
+export default projects;

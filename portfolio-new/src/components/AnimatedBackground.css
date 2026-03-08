@@ -1,0 +1,68 @@
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.animated-bg__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: float-slow 20s ease-in-out infinite;
+}
+
+.animated-bg__orb--1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(79, 142, 247, 0.4), transparent 70%);
+    top: -10%;
+    right: -5%;
+    animation-delay: 0s;
+}
+
+.animated-bg__orb--2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 70%);
+    bottom: 10%;
+    left: -8%;
+    animation-delay: -7s;
+}
+
+.animated-bg__orb--3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.3), transparent 70%);
+    top: 40%;
+    right: 30%;
+    animation-delay: -14s;
+}
+
+.animated-bg__orb--4 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent 70%);
+    bottom: -5%;
+    right: 10%;
+    animation-delay: -3s;
+}
+
+.animated-bg__grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, transparent 20%, black 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, transparent 20%, black 80%);
+}

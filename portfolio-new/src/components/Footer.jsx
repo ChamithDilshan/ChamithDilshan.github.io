@@ -17,7 +17,7 @@ export default function Footer() {
                     <a href="https://github.com/ChamithDilshan" target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="GitHub">
                         <FiGithub size={18} />
                     </a>
-                    <a href="https://www.linkedin.com/in/chamith-dilshan" target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/chamith-dilshan-ranathunga" target="_blank" rel="noopener noreferrer" className="footer__social-link" aria-label="LinkedIn">
                         <FiLinkedin size={18} />
                     </a>
                 </div>

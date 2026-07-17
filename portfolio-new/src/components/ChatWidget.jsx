@@ -8,7 +8,16 @@ export default function ChatWidget() {
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [sessionId, setSessionId] = useState(() => 'session-' + Date.now());
+    const [showAid, setShowAid] = useState(false);
     const chatBodyRef = useRef(null);
+
+    useEffect(() => {
+        // Show the aid bubble after 2 seconds
+        const timer = setTimeout(() => {
+            setShowAid(true);
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         if (chatBodyRef.current) {
@@ -55,10 +64,27 @@ export default function ChatWidget() {
         <>
             {/* Floating toggle button */}
             {!isOpen && (
-                <button className="chat-toggle" onClick={() => setIsOpen(true)} aria-label="Open chat">
-                    <FiMessageSquare size={24} />
-                    <span className="chat-toggle__tooltip">Chat with AI Assistant</span>
-                </button>
+                <div className="chat-toggle-container">
+                    {showAid && (
+                        <div className="chat-aid-bubble glass">
+                            <span className="chat-aid-bubble__text">Ask my AI Assistant!</span>
+                            <button className="chat-aid-bubble__close" onClick={(e) => {
+                                e.stopPropagation();
+                                setShowAid(false);
+                            }} aria-label="Close message">
+                                <FiX size={12} />
+                            </button>
+                            <div className="chat-aid-bubble__arrow"></div>
+                        </div>
+                    )}
+                    <button className="chat-toggle" onClick={() => {
+                        setIsOpen(true);
+                        setShowAid(false);
+                    }} aria-label="Open chat">
+                        <FiMessageSquare size={24} />
+                        <span className="chat-toggle__tooltip">Chat with AI Assistant</span>
+                    </button>
+                </div>
             )}
 
             {/* Chat panel */}

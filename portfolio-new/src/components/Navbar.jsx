@@ -41,10 +41,6 @@ export default function Navbar() {
     return (
         <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
             <div className="navbar__container">
-                <NavLink to="/" className="navbar__logo">
-                    <span className="navbar__logo-icon">CD</span>
-                    <span className="navbar__logo-text">Chamith Dilshan</span>
-                </NavLink>
 
                 <div className={`navbar__links ${isOpen ? 'navbar__links--open' : ''}`}>
                     {navLinks.map((link) => (

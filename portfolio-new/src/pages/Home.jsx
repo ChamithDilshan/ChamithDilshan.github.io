@@ -1,10 +1,66 @@
-import { FiDownload, FiMail, FiArrowRight, FiExternalLink } from 'react-icons/fi';
+import { useState } from 'react';
+import { FiDownload, FiMail, FiArrowRight, FiExternalLink, FiChevronDown } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import GlassCard from '../components/GlassCard';
 import projects from '../data/projects';
 import blogs from '../data/blogs';
+import { aboutContent } from '../data/profile';
 import './Home.css';
+
+function PublicationCard({ title, authors, abstract, conference, readUrl, readText, projectLink }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const shouldTruncate = abstract.length > 200;
+    const displayedAbstract = isExpanded || !shouldTruncate
+        ? abstract
+        : `${abstract.slice(0, 200)}...`;
+
+    return (
+        <div className="publication glass">
+            <h3 className="publication__title">{title}</h3>
+            <p className="publication__authors">
+                <strong>Authors:</strong> {authors}
+            </p>
+            <p className="publication__abstract">
+                {displayedAbstract}
+                {shouldTruncate && (
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'var(--accent-blue)',
+                            cursor: 'pointer',
+                            padding: 0,
+                            font: 'inherit',
+                            fontWeight: '600',
+                            textDecoration: 'underline',
+                            marginLeft: '8px'
+                        }}
+                    >
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                    </button>
+                )}
+                {projectLink && (
+                    <Link to={projectLink} style={{ marginLeft: '12px', color: 'var(--accent-blue)', fontWeight: '600', textDecoration: 'underline' }}>
+                        See Project
+                    </Link>
+                )}
+            </p>
+            <div className="publication__meta">
+                <span className="publication__conf">{conference}</span>
+                <a
+                    href={readUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="publication__link"
+                >
+                    {readText} <FiExternalLink size={14} />
+                </a>
+            </div>
+        </div>
+    );
+}
 
 export default function Home() {
     return (
@@ -12,18 +68,20 @@ export default function Home() {
             {/* ===== HERO ===== */}
             <section className="hero">
                 <div className="hero__content">
-                    <div className="hero__badge">Lead AI Engineer @ Braingaze</div>
                     <h1 className="hero__title">
                         Hi, I'm <span className="gradient-text">Chamith Dilshan</span>
                     </h1>
                     <p className="hero__subtitle">
-                        Building innovative solutions at the intersection of{' '}
-                        <strong>AI</strong> and <strong>Healthcare</strong>
+                        PhD Researcher, NeuroBionics Lab | The University of Melbourne
                     </p>
                     <div className="hero__actions">
-                        <Link to="/projects" className="btn btn--primary">
-                            View Projects <FiArrowRight size={16} />
-                        </Link>
+                        <button
+                            onClick={() => document.getElementById('publications')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="btn btn--primary"
+                            style={{ border: 'none', cursor: 'pointer', font: 'inherit' }}
+                        >
+                            View Publications <FiArrowRight size={16} />
+                        </button>
                         <a href="#contact" className="btn btn--glass">
                             Get in Touch
                         </a>
@@ -32,6 +90,14 @@ export default function Home() {
                 <div className="hero__visual">
                     <div className="hero__photo-wrapper">
                         <img src="./images/chamith.jpg" alt="Chamith Dilshan" className="hero__photo" />
+                    </div>
+                </div>
+
+                {/* Scroll Down Indicator */}
+                <div className="hero__scroll-down" onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}>
+                    <div className="scroll-arrows">
+                        <FiChevronDown className="scroll-arrow scroll-arrow--first" size={24} />
+                        <FiChevronDown className="scroll-arrow scroll-arrow--second" size={24} />
                     </div>
                 </div>
             </section>
@@ -45,21 +111,42 @@ export default function Home() {
                 <ScrollReveal delay={100}>
                     <div className="about glass">
                         <div className="about__text">
-                            <p>
-                                Hey there! 👋 I'm Chamith Dilshan from Sri Lanka. Currently, I work as the Lead AI Engineer at{' '}
-                                <a href="https://www.braingaze.com" target="_blank" rel="noopener noreferrer">
-                                    Braingaze
-                                </a>, Spain.
-                            </p>
-                            <p>
-                                I graduated with First Class (Hons) in Biomedical Engineering from the Department of Electronics and
-                                Telecommunication Engineering, University of Moratuwa, Sri Lanka. My passion lies in bio signal
-                                processing and machine learning, where I focus on creating innovative solutions at the intersection of
-                                technology and healthcare.
-                            </p>
+                            {aboutContent}
                         </div>
                     </div>
                 </ScrollReveal>
+            </section>
+
+            {/* ===== PUBLICATIONS ===== */}
+            <section className="section" id="publications">
+                <ScrollReveal>
+                    <div className="section-divider" />
+                    <h2 className="section-title">Publications</h2>
+                </ScrollReveal>
+                <div className="publications-list">
+                    <ScrollReveal delay={100}>
+                        <PublicationCard
+                            title="Real-world clinical validation of brainstem-based ocular biomarkers for ADHD classification in children and adults"
+                            authors="Chamith Ranathunga, August Romeo, Elizabeth Kilbey & Hans Supèr"
+                            abstract="Current ADHD diagnostic practices rely on subjective rating scales and continuous performance tests with limited specificity. We propose an objective deep-learning approach classifying ADHD via task-evoked pupil diameter and binocular eye-movement synchrony during a visual cueing task in 439 participants across 14 clinical centers. We implemented two independent models: a multiple instance learning (MIL) framework for pupil dynamics and conventional classifiers for eye-movement synchrony. The outputs of these models were fused to derive two novel indices, a diagnostic score and an impulsivity score. Using a three-zone policy (healthy, ADHD, uncertain) to manage diagnostic uncertainty, pediatric cross-validation (N=324) yielded diagnostic and impulsivity sensitivities of 0.79 and 0.74, and specificities of 0.82 and 0.70. Adult external testing (N=115) achieved specificities of 0.86 and 0.92, with sensitivities of 0.66 and 0.68. Explainable AI confirmed predictions are driven by increasing pupil responses immediately following cue and stimulus onsets. Statistical projections estimate that integrating this tool with standard rating scales can optimize diagnostic pathways, yielding 95% sensitivity in a screening mode or 96% specificity in a confirmation mode. These physiologically grounded biomarkers reliably quantify cognitive impairments, offering a robust tool to reduce subjective clinical bias."
+                            conference="📄 Published in Scientific Reports (Nature) 2026"
+                            readUrl="https://www.nature.com/articles/s41598-026-56036-0"
+                            readText="Read on Nature"
+                        />
+                    </ScrollReveal>
+
+                    <ScrollReveal delay={200}>
+                        <PublicationCard
+                            title="Real-Time AI-Driven People Tracking and Counting Using Overhead Cameras"
+                            authors="Ishrath Ahamed, Chamith Dilshan Ranathunga, Dinuka Sandun Udayantha, Benny Kai Kiat Ng, Chau Yuen"
+                            abstract="Accurate people counting in smart buildings and intelligent transportation systems is crucial for energy management, safety protocols, and resource allocation. This is especially critical during emergencies, where precise occupant counts are vital for safe evacuation."
+                            conference="📄 Accepted at IEEE TENCON 2024"
+                            readUrl="https://arxiv.org/abs/2411.10072"
+                            readText="Read on ArXiv"
+                            projectLink="/projects/overhead-people-counter"
+                        />
+                    </ScrollReveal>
+                </div>
             </section>
 
             {/* ===== RECENT POSTS ===== */}
@@ -88,42 +175,6 @@ export default function Home() {
                         />
                     </ScrollReveal>
                 </div>
-            </section>
-
-            {/* ===== PUBLICATIONS ===== */}
-            <section className="section" id="publications">
-                <ScrollReveal>
-                    <div className="section-divider" />
-                    <h2 className="section-title">Publications</h2>
-                </ScrollReveal>
-                <ScrollReveal delay={100}>
-                    <div className="publication glass">
-                        <h3 className="publication__title">
-                            Real-Time AI-Driven People Tracking and Counting Using Overhead Cameras
-                        </h3>
-                        <p className="publication__authors">
-                            <strong>Authors:</strong> Ishrath Ahamed, Chamith Dilshan Ranathunga, Dinuka Sandun Udayantha, Benny
-                            Kai Kiat Ng, Chau Yuen
-                        </p>
-                        <p className="publication__abstract">
-                            Accurate people counting in smart buildings and intelligent transportation systems is crucial for energy
-                            management, safety protocols, and resource allocation. This is especially critical during emergencies,
-                            where precise occupant counts are vital for safe evacuation.{' '}
-                            <Link to="/projects/overhead-people-counter">See More</Link>
-                        </p>
-                        <div className="publication__meta">
-                            <span className="publication__conf">📄 Accepted at IEEE TENCON 2024</span>
-                            <a
-                                href="https://arxiv.org/abs/2411.10072"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="publication__link"
-                            >
-                                Read on ArXiv <FiExternalLink size={14} />
-                            </a>
-                        </div>
-                    </div>
-                </ScrollReveal>
             </section>
 
             {/* ===== RESUME ===== */}

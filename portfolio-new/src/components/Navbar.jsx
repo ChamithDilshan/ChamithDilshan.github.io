@@ -97,6 +97,7 @@ export default function Navbar() {
                         path: link.to,
                         title: `Scroll to ${link.label}`,
                     });
+                    console.log('[GoatCounter] Tracked nav click:', link.to);
                 }
             }
         }

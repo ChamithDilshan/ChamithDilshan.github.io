@@ -34,11 +34,15 @@ function GoatCounterTracker() {
   const location = useLocation();
 
   useEffect(() => {
+    // In HashRouter: location.pathname is the virtual path inside the hash (e.g. "/projects")
+    // The full browser URL looks like: https://site.com/#/projects
+    // GoatCounter should receive the meaningful path like "/projects" or "/#about"
+    const trackedPath = location.pathname + (location.search || '') + (location.hash || '');
+
     const track = () => {
       if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({
-          path: location.pathname + location.search + location.hash,
-        });
+        window.goatcounter.count({ path: trackedPath });
+        console.log('[GoatCounter] Tracked page:', trackedPath);
         return true;
       }
       return false;

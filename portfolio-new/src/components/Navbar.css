@@ -80,6 +80,19 @@
     background: rgba(79, 142, 247, 0.1);
 }
 
+.navbar__link--life:hover {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    text-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.navbar--life .navbar__link--active,
+.navbar__link--life.navbar__link--active {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.15);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+}
+
 .navbar__toggle {
     display: none;
     background: none;

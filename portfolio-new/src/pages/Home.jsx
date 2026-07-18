@@ -66,13 +66,15 @@ export default function Home() {
     return (
         <>
             {/* ===== HERO ===== */}
-            <section className="hero">
+            <section className="hero" id="home">
                 <div className="hero__content">
                     <h1 className="hero__title">
-                        Hi, I'm <span className="gradient-text">Chamith Dilshan</span>
+                        Hi, I'm <span className="gradient-text">Chamith Ranathunga</span>
                     </h1>
                     <p className="hero__subtitle">
-                        PhD Researcher, NeuroBionics Lab | The University of Melbourne
+                        <span className="hero__subtitle-role">PhD Researcher, NeuroBionics Lab</span>
+                        <span className="hero__subtitle-divider"> | </span>
+                        <span className="hero__subtitle-org">The University of Melbourne</span>
                     </p>
                     <div className="hero__actions">
                         <button
@@ -82,14 +84,18 @@ export default function Home() {
                         >
                             View Publications <FiArrowRight size={16} />
                         </button>
-                        <a href="#contact" className="btn btn--glass">
+                        <button
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="btn btn--glass"
+                            style={{ border: 'none', cursor: 'pointer', font: 'inherit' }}
+                        >
                             Get in Touch
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div className="hero__visual">
                     <div className="hero__photo-wrapper">
-                        <img src="./images/chamith.jpg" alt="Chamith Dilshan" className="hero__photo" />
+                        <img src="./images/chamith.jpg" alt="Chamith Ranathunga" className="hero__photo" />
                     </div>
                 </div>
 
@@ -149,32 +155,61 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ===== RECENT POSTS ===== */}
-            <section className="section">
+            {/* ===== FEATURED PROJECTS ===== */}
+            <section className="section" id="projects">
                 <ScrollReveal>
                     <div className="section-divider" />
-                    <h2 className="section-title">Recent Posts</h2>
-                    <p className="section-subtitle">Latest projects and writings</p>
+                    <h2 className="section-title">Featured Projects</h2>
+                    <p className="section-subtitle">Highlights of my research and engineering projects</p>
                 </ScrollReveal>
                 <div className="cards-grid">
-                    <ScrollReveal delay={100}>
-                        <GlassCard
-                            title={projects[0].title}
-                            description={projects[0].shortDescription}
-                            link={`/projects/${projects[0].id}`}
-                            tag={projects[0].tag}
-                            icon={projects[0].icon}
-                        />
-                    </ScrollReveal>
-                    <ScrollReveal delay={200}>
-                        <GlassCard
-                            title={blogs[0].title}
-                            description={blogs[0].shortDescription}
-                            link={`/blogs/${blogs[0].id}`}
-                            tag="Blog"
-                        />
-                    </ScrollReveal>
+                    {projects.slice(0, 3).map((project, index) => (
+                        <ScrollReveal key={project.id} delay={index * 100}>
+                            <GlassCard
+                                title={project.title}
+                                description={project.shortDescription}
+                                link={`/projects/${project.id}`}
+                                tag={project.tag}
+                                icon={project.icon}
+                            />
+                        </ScrollReveal>
+                    ))}
                 </div>
+                <ScrollReveal delay={300}>
+                    <div className="section-actions" style={{ display: 'flex', justifyContent: 'center', marginTop: 'var(--space-2xl)' }}>
+                        <Link to="/projects" className="btn btn--primary">
+                            View All Projects <FiArrowRight size={16} />
+                        </Link>
+                    </div>
+                </ScrollReveal>
+            </section>
+
+            {/* ===== LATEST BLOGS ===== */}
+            <section className="section" id="blogs">
+                <ScrollReveal>
+                    <div className="section-divider" />
+                    <h2 className="section-title">Latest Blogs</h2>
+                    <p className="section-subtitle">Insights and writings on technology and research</p>
+                </ScrollReveal>
+                <div className="cards-grid">
+                    {blogs.slice(0, 3).map((blog, index) => (
+                        <ScrollReveal key={blog.id} delay={index * 100}>
+                            <GlassCard
+                                title={blog.title}
+                                description={blog.shortDescription}
+                                link={`/blogs/${blog.id}`}
+                                tag="Blog"
+                            />
+                        </ScrollReveal>
+                    ))}
+                </div>
+                <ScrollReveal delay={300}>
+                    <div className="section-actions" style={{ display: 'flex', justifyContent: 'center', marginTop: 'var(--space-2xl)' }}>
+                        <Link to="/blogs" className="btn btn--primary">
+                            Read All Blogs <FiArrowRight size={16} />
+                        </Link>
+                    </div>
+                </ScrollReveal>
             </section>
 
             {/* ===== RESUME ===== */}
@@ -206,12 +241,23 @@ export default function Home() {
                 </ScrollReveal>
                 <ScrollReveal delay={100}>
                     <div className="contact glass">
-                        <p>
+                        <p className="contact__description">
                             You can pass your message to my AI assistant or feel free to reach out directly.
                         </p>
-                        <a href="mailto:chamithdilshan5465@gmail.com" className="btn btn--glass">
-                            <FiMail size={16} /> chamithdilshan5465@gmail.com
-                        </a>
+                        <div className="contact__methods">
+                            <div className="contact__method">
+                                <span className="contact__label">Academic & Research Inquiries</span>
+                                <a href="mailto:r.ranathunga@student.unimelb.edu.au" className="btn btn--glass">
+                                    <FiMail size={16} /> r.ranathunga@student.unimelb.edu.au
+                                </a>
+                            </div>
+                            <div className="contact__method">
+                                <span className="contact__label">General & Engineering Inquiries</span>
+                                <a href="mailto:chamithdilshan5465@gmail.com" className="btn btn--glass">
+                                    <FiMail size={16} /> chamithdilshan5465@gmail.com
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </ScrollReveal>
             </section>

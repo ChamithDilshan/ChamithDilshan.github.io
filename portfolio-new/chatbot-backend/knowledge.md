@@ -3,7 +3,9 @@
 ## Personal Information
 - **Name:** Chamith Dilshan Ranathunga
 - **Location:** Sri Lanka (working remotely for a company in Spain)
-- **Email:** chamithdilshan5465@gmail.com
+- **Email:** 
+  - Academic & Research Inquiries: r.ranathunga@student.unimelb.edu.au
+  - General & Engineering Inquiries: chamithdilshan5465@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/chamith-dilshan-ranathunga
 - **GitHub:** https://github.com/ChamithDilshan
 - **Portfolio:** https://chamithdilshan.github.io

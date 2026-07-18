@@ -30,10 +30,38 @@ function ScrollToTop() {
   return null;
 }
 
+function GoatCounterTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const track = () => {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({
+          path: location.pathname + location.search + location.hash,
+        });
+        return true;
+      }
+      return false;
+    };
+
+    if (!track()) {
+      const interval = setInterval(() => {
+        if (track()) {
+          clearInterval(interval);
+        }
+      }, 100);
+      return () => clearInterval(interval);
+    }
+  }, [location.pathname, location.search, location.hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <GoatCounterTracker />
       <AnimatedBackground />
       <Navbar />
       <main>

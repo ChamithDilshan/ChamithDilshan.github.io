@@ -90,6 +90,14 @@ export default function Navbar() {
             if (el) {
                 el.scrollIntoView({ behavior: 'smooth' });
                 setActiveSection(id);
+
+                // Track the custom scroll navigation event in GoatCounter
+                if (window.goatcounter && window.goatcounter.count) {
+                    window.goatcounter.count({
+                        path: link.to,
+                        title: `Scroll to ${link.label}`,
+                    });
+                }
             }
         }
     };

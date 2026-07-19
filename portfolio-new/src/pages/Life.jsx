@@ -67,7 +67,7 @@ export default function Life() {
                                     <div className="photography-card__img-wrapper">
                                         <img 
                                             src={photo.imageUrl} 
-                                            alt={photo.title} 
+                                            alt={`${photo.title} photo by Chamith Ranathunga`} 
                                             className="photography-card__img" 
                                             loading="lazy"
                                         />

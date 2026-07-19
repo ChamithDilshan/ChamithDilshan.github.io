@@ -144,7 +144,7 @@ export default function Home() {
                     <ScrollReveal delay={200}>
                         <PublicationCard
                             title="Real-Time AI-Driven People Tracking and Counting Using Overhead Cameras"
-                            authors="Ishrath Ahamed, Chamith Dilshan Ranathunga, Dinuka Sandun Udayantha, Benny Kai Kiat Ng, Chau Yuen"
+                            authors="Ishrath Ahamed, Chamith Ranathunga, Dinuka Sandun Udayantha, Benny Kai Kiat Ng, Chau Yuen"
                             abstract="Accurate people counting in smart buildings and intelligent transportation systems is crucial for energy management, safety protocols, and resource allocation. This is especially critical during emergencies, where precise occupant counts are vital for safe evacuation."
                             conference="📄 Accepted at IEEE TENCON 2024"
                             readUrl="https://arxiv.org/abs/2411.10072"

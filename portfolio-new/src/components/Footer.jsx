@@ -23,7 +23,7 @@ export default function Footer() {
                 </div>
 
                 <div className="footer__copyright">
-                    <p>&copy; {new Date().getFullYear()} Chamith Dilshan Ranathunga | Built with 💻 and ☕</p>
+                    <p>&copy; {new Date().getFullYear()} Chamith Ranathunga | Built with 💻 and ☕</p>
                 </div>
             </div>
         </footer>

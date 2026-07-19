@@ -41,7 +41,7 @@ export default function LifeModal({ photos, currentIndex, onClose, onPrev, onNex
 
             <div className="life-modal-content glass-strong" onClick={(e) => e.stopPropagation()}>
                 <div className="life-modal-media-col">
-                    <img src={photo.imageUrl} alt={photo.title} className="life-modal-img" />
+                    <img src={photo.imageUrl} alt={`${photo.title} photo by Chamith Ranathunga`} className="life-modal-img" />
                 </div>
                 <div className="life-modal-text-col">
                     <div className="life-modal-header">

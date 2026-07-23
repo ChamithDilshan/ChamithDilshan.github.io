@@ -1,13 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
-import lifeData from '../data/life';
 import LifeModal from '../components/LifeModal';
 import './Life.css';
 
 export default function Life() {
+    const [lifeData, setLifeData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
 
+    useEffect(() => {
+        // Adding a cache-busting query param or just simple fetch
+        fetch('https://raw.githubusercontent.com/ChamithDilshan/portfolio-assets/main/life/life-data.json')
+            .then(res => {
+                if (!res.ok) throw new Error('Failed to load life data');
+                return res.json();
+            })
+            .then(data => {
+                setLifeData(data);
+                setIsLoading(false);
+            })
+            .catch(err => {
+                console.error("Error fetching life data:", err);
+                setError(err.message);
+                setIsLoading(false);
+            });
+    }, []);
     const categories = ['All', 'Nature', 'Travel', 'Street'];
 
     const filteredPhotos = selectedCategory === 'All'
@@ -59,31 +78,36 @@ export default function Life() {
                 </div>
 
                 {/* Masonry Grid */}
-                <div className="masonry-grid">
-                    {filteredPhotos.map((photo, index) => (
-                        <ScrollReveal key={photo.id} delay={index * 80}>
-                            <div className="masonry-item" onClick={() => openLightbox(index)}>
-                                <div className="photography-card">
-                                    <div className="photography-card__img-wrapper">
-                                        <img 
-                                            src={photo.imageUrl} 
-                                            alt={`${photo.title} photo by Chamith Ranathunga`} 
-                                            className="photography-card__img" 
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                    <div className="photography-card__overlay">
-                                        <div className="photography-card__content">
-                                            <span className="photography-card__category">{photo.category}</span>
-                                            <h3 className="photography-card__title">{photo.title}</h3>
-                                            <p className="photography-card__caption">{photo.shortDescription}</p>
+                {isLoading && <p style={{textAlign: 'center', margin: '4rem 0'}}>Loading photos...</p>}
+                {error && <p style={{textAlign: 'center', color: 'red', margin: '4rem 0'}}>Error loading photos: {error}</p>}
+                
+                {!isLoading && !error && (
+                    <div className="masonry-grid">
+                        {filteredPhotos.map((photo, index) => (
+                            <ScrollReveal key={photo.id || index} delay={index * 80}>
+                                <div className="masonry-item" onClick={() => openLightbox(index)}>
+                                    <div className="photography-card">
+                                        <div className="photography-card__img-wrapper">
+                                            <img 
+                                                src={photo.imageUrl} 
+                                                alt={`${photo.title} photo by Chamith Ranathunga`} 
+                                                className="photography-card__img" 
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                        <div className="photography-card__overlay">
+                                            <div className="photography-card__content">
+                                                <span className="photography-card__category">{photo.category}</span>
+                                                <h3 className="photography-card__title">{photo.title}</h3>
+                                                <p className="photography-card__caption">{photo.shortDescription}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </ScrollReveal>
-                    ))}
-                </div>
+                            </ScrollReveal>
+                        ))}
+                    </div>
+                )}
             </section>
 
             {/* Lightbox / Modal */}

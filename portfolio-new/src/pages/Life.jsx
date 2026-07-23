@@ -11,8 +11,8 @@ export default function Life() {
     const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
 
     useEffect(() => {
-        // Adding a cache-busting query param or just simple fetch
-        fetch('https://raw.githubusercontent.com/ChamithDilshan/portfolio-assets/main/life/life-data.json')
+        // Fetch with cache-busting parameter to ensure immediate updates
+        fetch(`https://raw.githubusercontent.com/ChamithDilshan/portfolio-assets/main/life/life-data.json?t=${Date.now()}`)
             .then(res => {
                 if (!res.ok) throw new Error('Failed to load life data');
                 return res.json();

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FiDownload, FiMail, FiArrowRight, FiExternalLink, FiChevronDown } from 'react-icons/fi';
+import { FiDownload, FiMail, FiArrowRight, FiExternalLink, FiChevronDown, FiEye } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import GlassCard from '../components/GlassCard';
@@ -220,15 +220,14 @@ export default function Home() {
                 </ScrollReveal>
                 <ScrollReveal delay={100}>
                     <div className="resume glass">
-                        <p>Download my latest resume to learn more about my experience and skills.</p>
+                        <p>View my latest resume to learn more about my experience and skills.</p>
                         <a
                             href="./cv.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            download="cv.pdf"
                             className="btn btn--primary"
                         >
-                            <FiDownload size={16} /> Download Resume
+                            <FiEye size={16} /> View Resume
                         </a>
                     </div>
                 </ScrollReveal>

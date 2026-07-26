@@ -58,7 +58,7 @@
 - **Paper:** "Real-Time AI-Driven People Tracking and Counting Using Overhead Cameras"
 - **Conference:** IEEE TENCON 2024, Marina Bay Sands, Singapore
 - **Authors:** Ishrath Ahamed, Chamith Dilshan Ranathunga, Dinuka Sandun Udayantha, Benny Kai Kiat Ng, Chau Yuen
-- **ArXiv:** https://arxiv.org/abs/2411.10072
+- **IEEE Xplore:** https://ieeexplore.ieee.org/document/10902806
 
 ### Action Recognition for Safety (Internship @ SUTD)
 - Developed action recognition system for detecting unauthorized activities in HDB void decks in Singapore

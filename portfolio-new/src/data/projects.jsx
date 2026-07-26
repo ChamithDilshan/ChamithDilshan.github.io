@@ -105,7 +105,7 @@ const projects = [
             paper: {
                 title: 'Real-Time AI-Driven People Tracking and Counting Using Overhead Cameras',
                 conference: 'IEEE TENCON 2024, Marina Bay Sands, Singapore',
-                arxiv: 'https://arxiv.org/abs/2411.10072',
+                url: 'https://ieeexplore.ieee.org/document/10902806',
             },
             videos: ['https://drive.google.com/file/d/1M65am2l-mcx51gXEJT3_lvNf4HyWL-CR/preview'],
             references: [

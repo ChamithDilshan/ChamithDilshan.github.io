@@ -231,8 +231,8 @@ export default function ProjectDetail() {
                             <p>
                                 <strong>{c.paper.title}</strong> — {c.paper.conference}
                             </p>
-                            <a href={c.paper.arxiv} target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: '0.5rem' }}>
-                                Read on ArXiv
+                            <a href={c.paper.url} target="_blank" rel="noopener noreferrer" className="btn btn--primary" style={{ marginTop: '0.5rem' }}>
+                                Read Paper
                             </a>
                         </div>
                     </ScrollReveal>

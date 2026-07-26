@@ -222,9 +222,10 @@ export default function Home() {
                     <div className="resume glass">
                         <p>Download my latest resume to learn more about my experience and skills.</p>
                         <a
-                            href="https://drive.google.com/file/d/1lJUI6EF18qLTZSFRHPhfbnNkEKVXVEED/view?usp=share_link"
+                            href="./cv.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
+                            download="cv.pdf"
                             className="btn btn--primary"
                         >
                             <FiDownload size={16} /> Download Resume
